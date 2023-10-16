@@ -17,16 +17,31 @@
 # Input: 6 -> -20 30 -40 50 10 -10
 # Output: 2
 
+# import random
+# n = int(input("Введите кол-во дней: "))
+# count = 0
+# max_count = 0
+# for i in range(n):
+#     temp = int(input("Введите температуру: "))
+#     if temp >= 0:
+#         count += 1
+#         if max_count < count:
+#             max_count = count
+#     else:
+#         count = 0
+# print(max_count)
+
 import random
-n = int(input("Введите кол-во дней: "))
+print("Enter N")
+array = [random.randint(-50,50) for i in range(int(input()))]
+temp_count = 0
 count = 0
-max_count = 0
-for i in range(n):
-    temp = int(input("Введите температуру: "))
-    if temp >= 0:
-        count += 1
-        if max_count < count:
-            max_count = count
+print(array)
+for temp in array:
+    if temp>0:
+        temp_count+=1
     else:
-        count = 0
-print(max_count)
+        count = max(count,temp_count)
+        temp_count = 0
+count = max(count,temp_count)
+print(count)
