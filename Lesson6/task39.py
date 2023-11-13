@@ -24,3 +24,23 @@ for i in arr_m:
         arr_second.append(i)
 print(arr_second)
 
+
+# import random
+
+# def filter_list(array1, array2):
+#     res_array = []
+#     for i in array1:
+#         if i not in array2:
+#             res_array.append(i)
+#     return res_array
+
+# def create_random_list(number):
+#     return [random.randint(-10,10) for _ in range(number+1)]
+
+# number_1 = int(input("Введите количество элементов первого массива: "))
+# int_array_1 = create_random_list(number_1)
+# print(int_array_1)
+# number_2 = int(input("Введите количество элементов второго массива: "))
+# int_array_2 = create_random_list(number_2)
+# print(int_array_2)
+# print(filter_list(int_array_1, int_array_2))

@@ -9,4 +9,5 @@
 
 def change_num(numbers):
     for n in numbers:
-        if numbers in (1, )
+        if numbers in (1, ):
+            
