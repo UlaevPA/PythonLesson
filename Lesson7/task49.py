@@ -18,14 +18,19 @@
 # имеющий такую площадь. Гарантируется, что самая далекая
 # планета ровно одна
 
-from math import pi
-def find_farthest_orbit(list_of_orbits):
-    areas=[]
-    max_area = 0
-    max_el= list_of_orbits[0]
-    max_area2=max([pi*i[0]*i[1] for i in list_of_orbits if i[0] != i[1]])
-    res_final= list(filter(lambda x: max_area2 == pi*x[0]*x[1] ,list_of_orbits))
-    return res_final[0]
-orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
+# from math import pi
+# def find_farthest_orbit(list_of_orbits):
+#     areas=[]
+#     max_area = 0
+#     max_el= list_of_orbits[0]
+#     max_area2=max([pi*i[0]*i[1] for i in list_of_orbits if i[0] != i[1]])
+#     res_final= list(filter(lambda x: max_area2 == pi*x[0]*x[1] ,list_of_orbits))
+#     return res_final[0]
+# orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
 
-print(find_farthest_orbit(orbits))
+# print(find_farthest_orbit(orbits))
+
+import math
+def find_farthest_orbit(list_of_orbits):
+    return max(list(filter(lambda x: x[0] != x[1],list_of_orbits)), key = lambda x: math.pi*x[0]*x[1])
+print(find_farthest_orbit ([(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]))
