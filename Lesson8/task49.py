@@ -41,7 +41,11 @@ def modify(file_name:str):
         
     with open(file_name, 'w',encoding='utf-8') as f:\
         f.writelines(data)
-        
+
+
+def copy(file_name:str, second_file: str):
+    import shutil
+    shutil.copy(file_name, second_file)
         
 def find_by_attribute(file_name:str,option: bool):
     
@@ -92,6 +96,7 @@ def add_new(file_name: str):
  
 def main():
     file_name = 'phonebook.txt'
+    second_file = 'phonebook2.txt'
     flag_exit = False
     while not flag_exit:
         print('1 - показать все записи')
@@ -99,6 +104,7 @@ def main():
         print('3 - удалить запись')
         print('4 - изменить запись')
         print('5 - поиск записи по имени/фамилии')
+        print('6 - копирование записей в новый справочник')
         answer = input('Введите операцию или x для выхода: ')
         if answer == '1':
             show_all(file_name=file_name)
@@ -110,6 +116,8 @@ def main():
             modify(file_name=file_name)
         elif answer == '5':
             print(find_by_attribute(file_name,False))
+        elif answer == '6':
+            copy(file_name, second_file)
         elif answer == 'x':
             flag_exit = True
 
