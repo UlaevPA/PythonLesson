@@ -43,9 +43,8 @@ def modify(file_name:str):
         f.writelines(data)
 
 
-def copy(file_name:str, second_file: str):
-    import shutil
-    shutil.copy(file_name, second_file)
+
+        
         
 def find_by_attribute(file_name:str,option: bool):
     
@@ -70,7 +69,27 @@ def find_by_attribute(file_name:str,option: bool):
         return data[int(id)-1]
     
         
+def copy(file_name: str, second_file: str):
+   
+    
+    with open(file_name, 'r', encoding='utf-8') as f, open(second_file, 'w', encoding='utf-8') as s:
+        data = f.readlines()
+       
+        for i, v in enumerate(data, 1):
+            print(i,v)
+        str_num = int(input("Введите строку пользователя: "))
+        for i, v in enumerate(data, 1):
+            if i == str_num:
+                data2 = v
+        s.writelines(data2)
 
+
+       
+        
+        
+       
+            
+        
         
     
         
